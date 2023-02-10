@@ -1,7 +1,9 @@
-# site11-todo-list-ejs
+# site11-ToDoList-ejs
 
-Print todays name:
+Print today's name:
 
 Date(), getDay(),
+
 Today's Name - by using 'day number' (switch statement)
+
 Today's Name - by using 'day name' (substring)
