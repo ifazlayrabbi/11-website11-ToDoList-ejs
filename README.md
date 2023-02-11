@@ -1,10 +1,13 @@
 # site11-ToDoList-ejs
+Website: https://todolist-fr.onrender.com/
 
-ejs layout
+https://todolist-fr.onrender.com/work
 
-- header layout
-- footer layout
+https://todolist-fr.onrender.com/about
 
-same layout can be reused in multiple .ejs files
+It's a ToDo List website.
 
-(layouts are for reusing the same thing in different places)
+User can add his tasks on this app on a daily basis.
+
+
+Tools: Node.js, Express, EJS
