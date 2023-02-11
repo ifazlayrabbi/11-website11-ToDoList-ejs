@@ -1,5 +1,9 @@
 # site11-ToDoList-ejs
 
-multiple page setup in app.js,
+ejs layout
 
-and configure list.ejs template accordingly.
+- header layout
+- footer layout
+
+same layout can be reused in multiple .ejs files
+(layouts are for reusing the same thing in different places)

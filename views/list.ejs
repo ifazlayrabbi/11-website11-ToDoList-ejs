@@ -1,25 +1,4 @@
-<!-- ejs template -->
-
-<!-- When one .ejs file can be used in many places,
-that file is called template;
-here << list.ejs >> is a <<< ejs template >>>,
-		--------			 ------------
-because it can be used as a homepage 
-as well as a /work page -->
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ToDo List</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
-
-<body>
+<%- include('header') -%>   <!-- ejs layout -->
 
 	<div class="box" id="heading">
 		<h1> <%= to_day %> ToDo List</h1>
@@ -39,10 +18,4 @@ as well as a /work page -->
 		</form>
 	</div>
 
-</body>
-
-<footer>
-    Copyright <span>&#169;</span> 2023 The FR Corp.
-</footer>
-
-</html>
+<%- include('footer') -%>   <!-- ejs layout -->
