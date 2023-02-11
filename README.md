@@ -10,4 +10,4 @@ It's a ToDo List website.
 User can add his tasks on this app on a daily basis.
 
 
-Tools: Node.js, Express, EJS
+Tools: Node.js, Express, EJS, Custom JS Module (date.js)
