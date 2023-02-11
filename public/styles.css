@@ -8,6 +8,11 @@ html {
 h1 {
   color: #fff;
   padding: 10px;
+  padding-bottom: 0;
+}
+h2 {
+  color: #fff;
+  padding-bottom: 10px;
 }
 
 .box {
