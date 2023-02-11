@@ -1,3 +1,3 @@
 # site11-ToDoList-ejs
 
-ejs intro
+take input from user and make list
