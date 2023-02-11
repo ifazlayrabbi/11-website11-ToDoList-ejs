@@ -1,5 +1,8 @@
 # site11-ToDoList-ejs
 
+Send html elements to homepage
+----
+
 Print today's name:
 
 Date(), getDay(),
