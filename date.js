@@ -26,7 +26,7 @@ exports.getDayName = () => {
     const date = new Date()
 
     const options = {weekday: 'long'}
-    return date.toLocaleString('en-us', options)
+    return date.toLocaleString(undefined, options)
 }
 
 
