@@ -1,3 +1,4 @@
 # site11-ToDoList-ejs
 
-add css to the list
+multiple page setup in app.js,
+and configure list.ejs template accordingly.
