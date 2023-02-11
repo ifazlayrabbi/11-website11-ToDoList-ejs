@@ -10,15 +10,20 @@
 <body>
 
 	<h1> <%= to_day %> ToDo List </h1>
-	<h3> It's a <%= day_type %>. </h3>
 	<hr>
 
+	<li>Go to market.</li>
+	<li>Buy some fruits.</li>
+	<li>Do some shopping.</li>
 
-	<% if((to_day == 'Friday') || (to_day == 'Saturday')){ %>
-		<h1 style="color:green"> <%= to_day %> ToDo List</h1>
-	<% }else{ %>
-		<h1 style="color:blue"> <%= to_day %> ToDo List</h1>
+	<% for(let i=0; i<new_items_array.length; i++){ %>
+		<li> <%= new_items_array[i] %> </li>
 	<% } %>
+
+	<form action="/" method="post">
+		<input type="text" name="newItem" placeholder="Add item" autocomplete="off">
+		<button type="submit">+</button>
+	</form>
 
 </body>
 </html>

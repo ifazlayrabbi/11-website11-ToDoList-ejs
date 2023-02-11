@@ -5,6 +5,9 @@ const app = express()
 
 app.set('view engine', 'ejs')
 
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: true}))
+
 
 
 
@@ -14,20 +17,22 @@ const options = {weekday:'long'}
 const today = date.toLocaleDateString('en-us', options)
 console.log(today)
 
-let dayType
-
-if((today=='Friday')||(today=='Saturday'))
-	dayType = 'Weekend'
-else
-	dayType = 'Weekday'
+const newItemsArray = []
 
 
 
 app.get('/', (req, res) => {
 	res.render('list', {
 		to_day: today,
-		day_type: dayType
+		new_items_array: newItemsArray
 	})
+})
+
+
+app.post('/', (req, res) => {
+	let item = req.body.newItem
+	newItemsArray.push(item)
+	res.redirect('/')
 })
 
 
