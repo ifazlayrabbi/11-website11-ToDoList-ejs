@@ -3,6 +3,8 @@
 const express = require('express')
 const app = express()
 
+app.set('view engine', 'ejs')
+
 
 
 
@@ -12,13 +14,20 @@ const options = {weekday:'long'}
 const today = date.toLocaleDateString('en-us', options)
 console.log(today)
 
+let dayType
 
-app.get('/', (req, res) => {	
+if((today=='Friday')||(today=='Saturday'))
+	dayType = 'Weekend'
+else
+	dayType = 'Weekday'
 
-	if((today=='Friday')||(today=='Saturday'))
-		res.sendFile(__dirname + '/weekend.html')
-	else
-		res.sendFile(__dirname + '/weekday.html')
+
+
+app.get('/', (req, res) => {
+	res.render('list', {
+		day_name: today,
+		day_type: dayType
+	})
 })
 
 
