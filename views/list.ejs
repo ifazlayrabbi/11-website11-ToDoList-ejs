@@ -4,26 +4,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ToDo List</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 
 <body>
 
-	<h1> <%= to_day %> ToDo List </h1>
-	<hr>
+	<div class="box" id="heading">
+		<h1> <%= to_day %> ToDo List</h1>
+	</div>
 
-	<li>Go to market.</li>
-	<li>Buy some fruits.</li>
-	<li>Do some shopping.</li>
+	<div class="box">
+		<% for(let i=0; i<new_items_array.length; i++){ %>
+			<div class="item">
+				<input type="checkbox">
+				<p> <%= new_items_array[i] %> <p>
+			</div>
+		<% } %>
 
-	<% for(let i=0; i<new_items_array.length; i++){ %>
-		<li> <%= new_items_array[i] %> </li>
-	<% } %>
-
-	<form action="/" method="post">
-		<input type="text" name="newItem" placeholder="Add item" autocomplete="off">
-		<button type="submit">+</button>
-	</form>
+		<form class="item" action="/" method="post">
+			<input type="text" name="newItem" placeholder="Add item" autocomplete="off">
+			<button type="submit">+</button>
+		</form>
+	</div>
 
 </body>
+
+<footer>
+    Copyright <span>&#169;</span> 2023 The FR Corp.
+</footer>
+
 </html>

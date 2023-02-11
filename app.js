@@ -8,12 +8,12 @@ app.set('view engine', 'ejs')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: true}))
 
-
+app.use(express.static('public'))
 
 
 
 const date = new Date()
-const options = {weekday:'long'}
+const options = {weekday:'long', year: 'numeric', month: 'short', day: 'numeric'}
 const today = date.toLocaleDateString('en-us', options)
 console.log(today)
 
