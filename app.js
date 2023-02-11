@@ -18,16 +18,17 @@ const today = date.toLocaleDateString('en-us', options)
 console.log(today)
 
 const newItemsArray = []
+const workItemsArray = []
 
 
 
 app.get('/', (req, res) => {
 	res.render('list', {
 		to_day: today,
-		new_items_array: newItemsArray
+		new_items_array: newItemsArray,
+		action_value: '/'
 	})
 })
-
 
 app.post('/', (req, res) => {
 	let item = req.body.newItem
@@ -35,6 +36,27 @@ app.post('/', (req, res) => {
 	res.redirect('/')
 })
 
+
+
+
+
+app.get('/work', (req, res) => res.render('list', {
+    to_day: 'Work',
+    new_items_array: workItemsArray,
+    action_value: '/work'
+}))
+
+app.post('/work', (req, res) => {
+    let item = req.body.newItem
+    workItemsArray.push(item)
+    res.redirect('/work')
+})
+
+
+
+
+
+app.get('/about', (req, res) => res.render('about'))
 
 
 app.listen(3000, () => console.log('Server is running on port 3000'))
