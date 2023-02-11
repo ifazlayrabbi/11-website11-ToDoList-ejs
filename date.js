@@ -15,7 +15,7 @@ exports.getDate = () => {
         month: 'short',
         day: 'numeric'
     }
-    return date.toLocaleString(undefined, options)
+    return date.toLocaleString('en-US', options)
 }
 
 
@@ -26,7 +26,7 @@ exports.getDayName = () => {
     const date = new Date()
 
     const options = {weekday: 'long'}
-    return date.toLocaleString(undefined, options)
+    return date.toLocaleString('en-US', options)
 }
 
 
