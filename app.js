@@ -12,13 +12,17 @@ app.use(express.static('public'))
 
 require('dotenv').config()
 
+const date = require(__dirname + '/date.js')
 
 
 
 
-const date = new Date()
-const options = {weekday:'long', year: 'numeric', month: 'short', day: 'numeric'}
-const today = date.toLocaleDateString('en-us', options)
+// const date = new Date()
+// const options = {weekday:'long', year: 'numeric', month: 'short', day: 'numeric'}
+// const today = date.toLocaleDateString('en-us', options)
+
+// const today = date()
+const today = date.getDate()
 console.log(today)
 
 const newItemsArray = []
