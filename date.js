@@ -11,11 +11,11 @@ exports.getDate = () => {
 
     const options = {
         weekday: 'long',
-        day: 'numeric',
+        year: 'numeric',
         month: 'short',
-        year: 'numeric'
+        day: 'numeric'
     }
-    return date.toLocaleString('en-gb', options)
+    return date.toLocaleString('en-us', options)
 }
 
 
