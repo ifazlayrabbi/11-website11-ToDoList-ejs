@@ -11,11 +11,11 @@ exports.getDate = () => {
 
     const options = {
         weekday: 'long',
-        day: 'numeric',
+        year: 'numeric',
         month: 'short',
-        year: 'numeric'
+        day: 'numeric'
     }
-    return date.toLocaleString('en-gb', options)
+    return date.toLocaleString('en-us', options)
 }
 
 
@@ -26,7 +26,7 @@ exports.getDayName = () => {
     const date = new Date()
 
     const options = {weekday: 'long'}
-    return date.toLocaleString('en-gb', options)
+    return date.toLocaleString('en-us', options)
 }
 
 
