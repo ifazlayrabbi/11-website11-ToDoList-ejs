@@ -9,15 +9,15 @@
 
 <body>
 
-	<h1> <%= day_name %> ToDo List </h1>
+	<h1> <%= to_day %> ToDo List </h1>
 	<h3> It's a <%= day_type %>. </h3>
 	<hr>
 
 
-	<% if(day_name == ('Friday' || 'Saturday')){ %>
-		<h1 style="color:green"> <%= day_name %> ToDo List</h1>
+	<% if((to_day == 'Friday') || (to_day == 'Saturday')){ %>
+		<h1 style="color:green"> <%= to_day %> ToDo List</h1>
 	<% }else{ %>
-		<h1 style="color:blue"> <%= day_name %> ToDo List</h1>
+		<h1 style="color:blue"> <%= to_day %> ToDo List</h1>
 	<% } %>
 
 </body>

@@ -25,7 +25,7 @@ else
 
 app.get('/', (req, res) => {
 	res.render('list', {
-		day_name: today,
+		to_day: today,
 		day_type: dayType
 	})
 })
