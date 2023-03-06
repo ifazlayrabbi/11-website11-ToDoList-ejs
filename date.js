@@ -3,6 +3,10 @@
 // module.exports = getDate                // either getDate can be exported
 // module.exports = getDayName             // or getDayName can be exported
 
+// module.exports.getDate = getDate
+// module.exports.getDayName = getDayName
+
+
 
 exports.getDate = getDate
 function getDate(){
