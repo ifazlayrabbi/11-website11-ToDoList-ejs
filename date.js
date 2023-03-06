@@ -1,10 +1,10 @@
-// JavaScript module
+// JavaScript module                       // each JS file is a - 'JS module'
 
 // module.exports = getDate                // either getDate can be exported
 // module.exports = getDayName             // or getDayName can be exported
 
-// module.exports.getDate = getDate
-// module.exports.getDayName = getDayName
+// module.exports.getDate = getDate        // both can be exported
+// module.exports.getDayName = getDayName  // both can be exported
 
 
 
@@ -39,5 +39,5 @@ exports.getDayName = () => {             // here, function can not be called - w
 
 
 
-console.log(module.exports)             // JS module is an Object
+console.log(module.exports)             // 'JS module' is an Object
 // console.log(exports)
