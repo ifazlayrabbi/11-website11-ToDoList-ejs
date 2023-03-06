@@ -1,14 +1,14 @@
-// How 'JavaScript module' works
-// module.exports = getDate
-// module.exports = getDayName
+// JavaScript module
+
+// module.exports = getDate                // either getDate can be exported
+// module.exports = getDayName             // or getDayName can be exported
 
 
-// exports.getDate = getDate
-// function getDate(){
+exports.getDate = getDate
+function getDate(){
 
-exports.getDate = () => {
+// exports.getDate = () => {
     const date = new Date()
-
     const options = {
         weekday: 'long',
         year: 'numeric',
@@ -17,17 +17,20 @@ exports.getDate = () => {
     }
     return date.toLocaleString('en-US', options)
 }
+console.log(getDate())
+
 
 
 // exports.getDayName = getDayName
-// function getDayName(){
+// function getDayName(){                // function can be exported
 
-exports.getDayName = () => {
+// const getDayName = () => {            // variable cannot be exported    (but, function can be called)
+exports.getDayName = () => {             // here, function can not be called - within this file    (because, function name is not declared)
     const date = new Date()
-
     const options = {weekday: 'long'}
     return date.toLocaleString('en-US', options)
 }
+// console.log(getDayName())
 
 
 

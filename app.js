@@ -12,7 +12,9 @@ app.use(express.static('public'))
 
 require('dotenv').config()
 
-const date = require(__dirname + '/date.js')
+// const date = require(__dirname + '/date.js')
+const date = require('./date')
+
 
 
 
@@ -23,6 +25,7 @@ const date = require(__dirname + '/date.js')
 
 // const today = date()
 const today = date.getDate()
+// const today = date.getDayName()
 console.log(today)
 
 const newItemsArray = []
