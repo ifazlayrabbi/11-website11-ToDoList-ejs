@@ -38,4 +38,6 @@ exports.getDayName = () => {             // here, function can not be called - w
 
 
 
-// console.log(module.exports)
+
+console.log(module.exports)             // JS module is an Object
+// console.log(exports)
