@@ -21,7 +21,7 @@ function getDate(){
     }
     return date.toLocaleString('en-US', options)
 }
-console.log(getDate())
+// console.log(getDate())
 
 
 
@@ -39,5 +39,5 @@ exports.getDayName = () => {             // here, function can not be called - w
 
 
 
-console.log(module.exports)             // 'JS module' is an Object
+// console.log(module.exports)             // 'JS module' is an Object
 // console.log(exports)

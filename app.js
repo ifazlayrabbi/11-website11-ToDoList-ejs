@@ -1,3 +1,4 @@
+
 'use strict'
 
 const express = require('express')
@@ -14,6 +15,7 @@ require('dotenv').config()
 
 // const date = require(__dirname + '/date.js')
 const date = require('./date')
+const {List} = require('./db')
 
 
 
@@ -25,31 +27,55 @@ const date = require('./date')
 
 // const today = date()
 const today = date.getDate()
-// const today = date.getDayName()
 console.log(today)
 
-const newItemsArray = []
+
+
+
+
+let newItemsArray = []
 const workItemsArray = []
 
-
-
 app.get('/', (req, res) => {
-	res.render('list', {
-		to_day: today,
-		new_items_array: newItemsArray,
-		action_value: '/'
-	})
+	newItemsArray = []
+	async function func1(){
+		try{
+			const getItems = await List.find()
+			getItems.forEach((item) => {
+				newItemsArray.push(item.name)
+			})
+		} catch(err) {console.log(err.message)}
+
+		res.render('list', {
+			to_day: today,
+			new_items_array: newItemsArray,
+			action_value: '/'
+		})
+	}
+	func1()
+
+	
 })
 
 app.post('/', (req, res) => {
-	let item = req.body.newItem
-	newItemsArray.push(item)
+	let {new_item} = req.body
+	// newItemsArray.push(item)
+
+	const addItem = new List({
+		name: new_item
+	})
+	if(new_item){
+		async function func1 (){
+			try{
+				await addItem.save()
+				console.log('Item is saved in the database.')
+			} catch (err) {console.log(err.message)}
+		}
+		func1()
+	}
+
 	res.redirect('/')
 })
-
-
-
-
 
 app.get('/work', (req, res) => res.render('list', {
     to_day: 'Work',
@@ -58,14 +84,10 @@ app.get('/work', (req, res) => res.render('list', {
 }))
 
 app.post('/work', (req, res) => {
-    let item = req.body.newItem
+    let item = req.body.new_item
     workItemsArray.push(item)
     res.redirect('/work')
 })
-
-
-
-
 
 app.get('/about', (req, res) => res.render('about'))
 

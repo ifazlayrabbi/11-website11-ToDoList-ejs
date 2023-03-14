@@ -1,7 +1,8 @@
 <%- include('header') -%>   <!-- ejs layout -->
 
 	<div class="box" id="heading">
-		<h1> <%= to_day %> </h1> <h2 class="h2-aa"> ToDo List</h2>
+		<h1> <%= to_day %> </h1> 
+		<h2 class="h2-aa"> ToDo List</h2>
 	</div>
 
 	<div class="box">
@@ -13,7 +14,7 @@
 		<% } %>
 
 		<form class="item" action="<%= action_value %>" method="post">
-			<input type="text" name="newItem" placeholder="Add item" autocomplete="off">
+			<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
 			<button type="submit">+</button>
 		</form>
 	</div>
