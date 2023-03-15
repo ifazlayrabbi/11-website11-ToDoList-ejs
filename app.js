@@ -36,26 +36,33 @@ console.log(today)
 let newItemsArray = []
 const workItemsArray = []
 
-app.get('/', (req, res) => {
-	newItemsArray = []
-	async function func1(){
-		try{
-			const getItems = await List.find()
-			getItems.forEach((item) => {
-				newItemsArray.push(item.name)
-			})
-		} catch(err) {console.log(err.message)}
+async function func1(){
+	try{
+		const getItems = await List.find()
+		console.log(getItems[0])
 
-		res.render('list', {
-			to_day: today,
-			new_items_array: newItemsArray,
-			action_value: '/'
-		})
-	}
-	func1()
+		app.get('/', (req, res) => res.render('list', {
+				to_day: today,
+				get_items: getItems,
+				action_value: '/'
+		}))
+	} catch (err) {console.log(err.message)}
+}
+func1()
 
-	
-})
+
+
+		// console.log(getItems[0].name)
+
+		// for(let i=0; i<getItems.length; i++){
+		// 	console.log(getItems[i].name)
+		// }
+
+		// getItems.forEach(item => {
+		// 	console.log(item.name)
+		// })
+
+
 
 app.post('/', (req, res) => {
 	let {new_item} = req.body
@@ -75,6 +82,11 @@ app.post('/', (req, res) => {
 	}
 
 	res.redirect('/')
+})
+
+app.post('/delete', (req, res) => {
+	res.send('delete done')
+	console.log(req.body)
 })
 
 app.get('/work', (req, res) => res.render('list', {
