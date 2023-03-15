@@ -12,7 +12,7 @@
 		<form action="/delete" method="post">
 			<% for(let i=0; i<get_items.length; i++){ %>
 				<div class="item">
-					<input type="checkbox" name="<%= 'item' + i %>" value="<%= get_items[i]._id %>" onChange="this.form.submit()">
+					<input type="checkbox" name="item" value="<%= get_items[i]._id %>" onChange="this.form.submit()">
 					<p> <%= get_items[i].name %> <p>
 				</div>
 			<% } %>

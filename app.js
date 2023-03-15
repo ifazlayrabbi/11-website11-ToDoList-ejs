@@ -43,11 +43,13 @@ async function func1(){
 			const getItems = await List.find()
 			console.log(getItems[0])
 
-			res.render('list', {
-				to_day: today,
-				get_items: getItems,
-				action_value: '/'
-			})
+			if(getItems){
+				res.render('list', {
+					to_day: today,
+					get_items: getItems,
+					action_value: '/'
+				})
+			}
 		})
 	} catch (err) {console.log(err.message)}
 }
@@ -88,8 +90,21 @@ app.post('/', (req, res) => {
 })
 
 app.post('/delete', (req, res) => {
-	res.send('delete done')
-	console.log(req.body)
+	// res.send('delete done')
+	const {item} = req.body
+	// console.log(item)
+
+	async function func1(){
+		try{
+			await List.deleteOne({_id: item})
+			console.log('item deleted.')
+		} catch(err) {console.log(err.message)}
+	}
+	if(item){
+		func1()
+	}
+
+	res.redirect('/')
 })
 
 app.get('/work', (req, res) => res.render('list', {
