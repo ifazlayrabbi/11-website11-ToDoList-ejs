@@ -38,14 +38,17 @@ const workItemsArray = []
 
 async function func1(){
 	try{
-		const getItems = await List.find()
-		console.log(getItems[0])
+		
+		app.get('/', async (req, res) => {
+			const getItems = await List.find()
+			console.log(getItems[0])
 
-		app.get('/', (req, res) => res.render('list', {
+			res.render('list', {
 				to_day: today,
 				get_items: getItems,
 				action_value: '/'
-		}))
+			})
+		})
 	} catch (err) {console.log(err.message)}
 }
 func1()

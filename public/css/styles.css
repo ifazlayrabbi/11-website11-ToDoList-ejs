@@ -35,7 +35,7 @@ h1 {
   border-bottom: 1px solid #F1F1F1;
 }
 
-.item:last-child {
+.remove-border {
   border-bottom: 0;
 }
 

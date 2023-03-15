@@ -17,14 +17,12 @@
 				</div>
 			<% } %>
 		</form>
-	</div>
-
-
-
-
-		<form class="item" action="<%= action_value %>" method="post">
-			<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
-			<button type="submit">+</button>
+	
+		<form action="<%= action_value %>" method="post">
+			<div class="item remove-border">
+				<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
+				<button type="submit">+</button>
+			</div>
 		</form>
 	</div>
 
