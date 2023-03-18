@@ -9,19 +9,19 @@
 
 
 	<div class="box">
-		<form action="/delete" method="post">
+		<form action="<%= delete_action %>" method="post">
 			<% for(let i=0; i<get_items.length; i++){ %>
 				<div class="item">
-					<input type="checkbox" name="item" value="<%= get_items[i]._id %>" onChange="this.form.submit()">
-					<p> <%= get_items[i].name %> <p>
+					<input type="checkbox" name="id" value="<%= get_items[i]._id %>" onChange="this.form.submit()">
+					<p > <%= get_items[i].name %> <p>
 				</div>
 			<% } %>
 		</form>
 	
-		<form action="<%= action_value %>" method="post">
+		<form action="<%= add_action %>" method="post">
 			<div class="item remove-border">
 				<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
-				<button type="submit">+</button>
+				<button type="submit" name="page" value="<%= to_day %>">+</button>
 			</div>
 		</form>
 	</div>

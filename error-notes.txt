@@ -1,0 +1,40 @@
+
+css
+---------------
+
+<link rel="icon" href="/images/icon.ico">
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+
+'/' mistake before images & css caused me a lot of time;
+I was thinking why the new pages weren't loading the css file,
+while root page was working fine with that mistake.
+
+I'd checked if in the 'ejs rendering', there was any error,
+then I found the href mistake.
+
+
+
+
+
+
+database
+---------------
+
+const addItem = new List({
+  name: new_item
+})
+
+
+await Page.updateOne(
+  {name: page},
+  {$push: {data: addItem}}
+)
+
+await Page.updateOne(
+  {name: pageName},
+  {$pull: {data: {_id: id}}}
+)
+
+The mogodb nested query caused me trouble,
+to add, and remove new item inside the nested object

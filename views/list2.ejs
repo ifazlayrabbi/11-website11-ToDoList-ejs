@@ -1,0 +1,29 @@
+<%- include('header') -%>   <!-- ejs layout -->
+
+	<div class="box" id="heading">
+		<h1> <%= to_day %> </h1> 
+		<h2 class="h2-aa"> ToDo List</h2>
+	</div>
+
+
+
+
+	<div class="box">
+		<form action="<%= delete_action %>" method="post">
+			<% for(let i=0; i<get_items.length; i++){ %>
+				<div class="item">
+					<input type="checkbox" name="delete_item" value="<%= get_items[i]%>" onChange="this.form.submit()">
+					<p > <%= get_items[i] %> <p>
+				</div>
+			<% } %>
+		</form>
+	
+		<form action="<%= add_action %>" method="post">
+			<div class="item remove-border">
+				<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
+				<button type="submit" name="page" value="<%= to_day %>">+</button>
+			</div>
+		</form>
+	</div>
+
+<%- include('footer') -%>   <!-- ejs layout -->

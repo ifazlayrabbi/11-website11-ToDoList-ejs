@@ -5,6 +5,8 @@ mongoose.connect('mongodb+srv://'+process.env.user+':'+process.env.pass+'@cluste
 
 
 
+
+
 const listSchema = mongoose.Schema({
   name: String
 })
@@ -13,4 +15,29 @@ exports.List = List
 
 
 
+// const pageSchema = mongoose.Schema({
+//   name: String,
+//   data: [listSchema]
+// })
+// const Page = mongoose.model('Page', pageSchema)
+// exports.Page = Page
 
+
+
+const pageSchema = mongoose.Schema({
+  name: String,
+  data: [listSchema],
+  students: [
+    {
+      studentName: String,
+      subjects: [
+        {
+          subjectName: String,
+          marks: Number
+        }
+      ]
+    }
+  ]
+})
+const Page = mongoose.model('Page', pageSchema)
+exports.Page = Page
