@@ -38,3 +38,20 @@ await Page.updateOne(
 
 The mogodb nested query caused me trouble,
 to add, and remove new item inside the nested object
+
+
+
+
+
+
+
+<input type="hidden" name="page_name" value="<%= page_name %>">
+
+This line caused me a huge problem.
+I couldn't been able to delete the item from list, 
+because, I included this line inside the for loop.
+
+'page_name' was getting count till the loop time,
+So, the code couldn't identify the specific page
+from which to delete the item.
+
