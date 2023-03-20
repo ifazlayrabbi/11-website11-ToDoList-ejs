@@ -1,7 +1,7 @@
 <%- include('header') -%>   <!-- ejs layout -->
 
 	<div class="box" id="heading">
-		<h1> <%= to_day %> </h1> 
+		<h1> <%= page_name %> </h1> 
 		<h2 class="h2-aa"> ToDo List</h2>
 	</div>
 
@@ -9,19 +9,22 @@
 
 
 	<div class="box">
-		<form action="<%= delete_action %>" method="post">
+		<!-- <form action="<% // = delete_action %>" method="post"> -->
+		<form action="/delete" method="post">
 			<% for(let i=0; i<get_items.length; i++){ %>
 				<div class="item">
 					<input type="checkbox" name="id" value="<%= get_items[i]._id %>" onChange="this.form.submit()">
-					<p > <%= get_items[i].name %> <p>
+					<p> <%= get_items[i].name %> <p>
 				</div>
 			<% } %>
+			<input type="hidden" name="page_name" value="<%= page_name %>">
 		</form>
 	
-		<form action="<%= add_action %>" method="post">
+		<!-- <form action="<% // = add_action %>" method="post"> -->
+		<form action="/" method="post">
 			<div class="item remove-border">
 				<input type="text" name="new_item" placeholder="Add item" autocomplete="off">
-				<button type="submit" name="page" value="<%= to_day %>">+</button>
+				<button type="submit" name="page_name" value="<%= page_name %>">+</button>
 			</div>
 		</form>
 	</div>
