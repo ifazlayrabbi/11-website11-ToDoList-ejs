@@ -25,7 +25,7 @@ const {List, Page} = require('./db')
 
 // const today = date()
 const today = date.getDate()
-console.log(today)
+// console.log(today)
 
 let newItemsArray = []
 const workItemsArray = []
