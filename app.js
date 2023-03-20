@@ -10,7 +10,7 @@ app.use(express.static('public'))
 
 require('dotenv').config()
 const _ = require('lodash')
-// const {ObjectId} = require('mongodb')
+const {ObjectId} = require('mongodb')
 // const date = require(__dirname + '/date.js')
 const date = require('./date')
 const {List, Page} = require('./db')
@@ -83,8 +83,8 @@ app.post('/delete', (req, res) => {
 	const {id, page_name} = req.body
 
 	if(page_name == today){
-		// List.findByIdAndRemove(id)
-		List.deleteOne({_id: id})
+		// List.findByIdAndRemove(ObjectId(id))
+		List.deleteOne({_id: new ObjectId(id)})
 		.then(() => {
 			console.log('Deleted from Hompage.')
 			res.redirect('/')
@@ -94,7 +94,7 @@ app.post('/delete', (req, res) => {
 	else{
 		Page.updateOne(
 			{name: page_name},
-			{$pull: {data: {_id: id}}}
+			{$pull: {data: {_id: new ObjectId(id)}}}
 		)
 		.then(() => {
 			console.log('Deleted from Dynamic page')
