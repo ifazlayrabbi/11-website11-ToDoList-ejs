@@ -109,7 +109,6 @@ app.get('/get/:page', (req, res) => {
 
 	Page.findOne({name: pageName})
 	.then((page) => {
-		console.log('Requested page exists.')
 		res.render('list', {
 			page_name: pageName,
 			get_items: page.data,
