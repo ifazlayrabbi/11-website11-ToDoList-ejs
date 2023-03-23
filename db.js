@@ -4,7 +4,7 @@ mongoose.connect('mongodb+srv://'+process.env.user+':'+process.env.pass+'@cluste
 
 // mongoose.connect('mongodb+srv://'+process.env.user+':'+process.env.pass+'@cluster0.pbwxcxc.mongodb.net/?retryWrites=true&w=majority')
 // mongosh "mongodb+srv://cluster0.pbwxcxc.mongodb.net/myFirstDatabase" --apiVersion 1 --username put_user_name
-
+// mongoose.connect('mongodb://127.0.0.1:27017/newDB')
 
 
 
