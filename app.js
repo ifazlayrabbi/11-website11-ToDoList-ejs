@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
  
-require('dotenv').config()
+require('dotenv').config() 
 const _ = require('lodash')
 const {ObjectId} = require('mongodb')
 // const date = require(__dirname + '/date.js')
